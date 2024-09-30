@@ -29,7 +29,7 @@ export function Navbar() {
         className="container mx-auto max-w-screen-lg flex h-16 w-full items-center justify-between bg-background px-4 md:px-6">
         <Link href="/" className="flex items-center gap-2" prefetch={false}>
           <MountainIcon className="h-6 w-6" />
-          <span className="text-lg font-semibold">山</span>
+          <span className="text-lg font-semibold">OwO Network</span>
         </Link>
         {/* <Button variant="ghost" size="icon" className="ml-auto" asChild>
           <Link href="https://github.com/mx1700/cloudflare-image-share" target="_blank" className="flex items-center gap-2" prefetch={false}>
