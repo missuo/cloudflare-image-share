@@ -20,7 +20,7 @@ export default async function Home() {
   const enableImageCompression = env.ENABLE_IMAGE_COMPRESSION == undefined || env.ENABLE_IMAGE_COMPRESSION.toString() == 'true';   //默认打开压缩
   const compressedImageMaxSize = env.COMPRESSED_IMAGE_MAX_SIZE != undefined ? Number(env.COMPRESSED_IMAGE_MAX_SIZE) : 5;
   const maxImageWidthOrHeight = env.MAX_IMAGE_WIDTH_OR_HEIGHT != undefined ? Number(env.MAX_IMAGE_WIDTH_OR_HEIGHT) : 2560;
-  const webpServerUrl = env.WEBP_SERVER_URL;
+  const webpServerUrl = env.WEBP_SERVER_URL != undefined ? env.WEBP_SERVER_URL : '';
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
