@@ -80,6 +80,7 @@ export interface ImgUploadProps {
   enableImageCompression: boolean;
   compressedImageMaxSize: number;
   maxImageWidthOrHeight: number;
+  webpServerUrl: string;
 }
 
 export function ImgUpload(
@@ -87,7 +88,8 @@ export function ImgUpload(
       maxImageSize,
       enableImageCompression,
       compressedImageMaxSize,
-      maxImageWidthOrHeight
+      maxImageWidthOrHeight,
+      webpServerUrl
     }: ImgUploadProps
 ) {
   const [{ status, file, fileKey, progress }, dispatch] = useReducer(uploadReducer, initialState);
@@ -97,7 +99,7 @@ export function ImgUpload(
   const { toast } = useToast();
 
   const filePath = fileKey && /file/ + fileKey;
-  const fileUrl = filePath && new URL(filePath, document.baseURI).href;
+  const fileUrl = filePath && new URL(filePath, webpServerUrl).href;
 
   const handleFileChange = useCallback((file: File) => {
     dispatch({ type: 'selected', file })

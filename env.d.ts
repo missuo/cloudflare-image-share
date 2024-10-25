@@ -11,4 +11,5 @@ interface CloudflareEnv {
   ENABLE_IMAGE_COMPRESSION?: string
   COMPRESSED_IMAGE_MAX_SIZE?: string
   MAX_IMAGE_WIDTH_OR_HEIGHT?: string
+  WEBP_SERVER_URL?: string
 }

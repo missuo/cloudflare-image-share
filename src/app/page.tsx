@@ -20,6 +20,7 @@ export default async function Home() {
   const enableImageCompression = env.ENABLE_IMAGE_COMPRESSION == undefined || env.ENABLE_IMAGE_COMPRESSION.toString() == 'true';   //默认打开压缩
   const compressedImageMaxSize = env.COMPRESSED_IMAGE_MAX_SIZE != undefined ? Number(env.COMPRESSED_IMAGE_MAX_SIZE) : 5;
   const maxImageWidthOrHeight = env.MAX_IMAGE_WIDTH_OR_HEIGHT != undefined ? Number(env.MAX_IMAGE_WIDTH_OR_HEIGHT) : 2560;
+  const webpServerUrl = env.WEBP_SERVER_URL;
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
@@ -31,6 +32,7 @@ export default async function Home() {
             enableImageCompression={enableImageCompression}
             compressedImageMaxSize={compressedImageMaxSize}
             maxImageWidthOrHeight={maxImageWidthOrHeight}
+            webpServerUrl={webpServerUrl}
         />
         <div className="
         absolute opacity-50 -z-20 top-1/2 left-1/2 ml-[-40px] mt-[30px] h-[240px]  translate-x-1/3 bg-gradient-conic from-emerald-100 via-green-200 blur-2xl content-['']
